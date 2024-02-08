@@ -7,6 +7,9 @@
 <body>
 <h1>Popular TV shows</h1>
 <ul>
+    <hr>
+        <button><a href="/create_tvshow/">Add </a></button>
+    <hr>
     {% for i in tvshows %}
     <li>
         <h2>{{i.title}}</h2>
@@ -17,6 +20,7 @@
     </li>
 
     {% endfor %}
+
 
 </ul>
 </body>
