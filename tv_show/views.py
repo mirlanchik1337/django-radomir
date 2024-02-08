@@ -48,3 +48,13 @@ def tv_show_edit_view(request, id):
         return render(request, 'tv_shows/crud/edit_tvshow.html',
                   {'form': form, 'tvshow_id': tvshow_id})
 
+
+def add_review_view(request):
+    if request.method == 'POST':
+        form = forms.ReviewForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('The review was successfully added <a href="/">Main page</a>')
+    else:
+        form = forms.ReviewForm()
+        return render(request, 'tv_shows/add_review.html', {'form': form})

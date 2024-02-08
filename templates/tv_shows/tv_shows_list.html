@@ -1,27 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>TV Shows list</title>
-</head>
-<body>
-<h1>Popular TV shows</h1>
-<ul>
-    <hr>
-        <button><a href="/create_tvshow/">Add </a></button>
-    <hr>
-    {% for i in tvshows %}
-    <li>
-        <h2>{{i.title}}</h2>
-        <img src="{{i.image}}" alt="" width="300" height="200">
-        <p>genre: {{i.genre}}</p>
-        <a href="/tv_shows_list/{{i.id}}">Detail</a>
-        <br>
-    </li>
+{% load static %}
+{% include 'tv_shows/header.html'%}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="horizont">
+{% for i in tvshows %}
+<div class="card" style="width: 18rem;">
+  <img src="{{i.image}}" class="card-img-top" alt="..." style="height:200px; object-fit: cover;">
+  <div class="card-body">
+    <h5 class="card-title">{{i.title}}</h5>
+    <p class="card-text">{{i.genre}}</p>
+    <a href="/tv_shows_list/{{i.id}}/" class="btn btn-primary">Detail</a>
+  </div>
+</div>
+{% endfor %}
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
 
-    {% endfor %}
+{% include 'tv_shows/footer.html'%}
 
 
-</ul>
-</body>
-</html>
+
+
+

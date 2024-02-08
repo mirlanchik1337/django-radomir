@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Show's detail</title>
-</head>
-<body>
+{% include 'tv_shows/header.html'%}
   <h1>{{tvshow_id.title}}</h1>
   <img src={{tvshow_id.image}} alt="" width="480" height="300">
   <p>Description:{{tvshow_id.description}}</p>
@@ -26,8 +20,6 @@
     <hr>
         <button><a href="/tv_shows_list/{{tvshow_id.id}}/update">Edit </a></button>
         <button><a href="/tv_shows_list/{{tvshow_id.id}}/delete">Delete</a></button>
-        <button><a href="/tv_shows_list/{{tvshow_id.id}}/add_review">Add review</a></button>
-    <hr>
 
-</body>
-</html>
+    <hr>
+{% include 'tv_shows/footer.html'%}

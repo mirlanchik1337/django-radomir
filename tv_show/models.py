@@ -41,7 +41,7 @@ class Review(models.Model):
     tvshow = models.ForeignKey(TVShow, on_delete=models.CASCADE, related_name='tvshow_reviews')
     text = models.TextField()
     stars = models.CharField(max_length=10, choices=STARS, verbose_name='give a rating')
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, verbose_name='')
 
     def __str__(self):
         return f'{self.text}-{self.stars} '
