@@ -1,9 +1,12 @@
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-sita&m@2)+*7if!fbpl0@d9mdufaf6wrrqz8je%4t=wr0d=9qw'
+load_dotenv()
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = True
 
@@ -18,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'books',
+    'tv_show',
 ]
 
 MIDDLEWARE = [
@@ -76,7 +80,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'Asia/Bishkek'
 

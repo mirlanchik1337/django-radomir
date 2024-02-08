@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TV Shows list</title>
+</head>
+<body>
+<h1>Popular TV shows</h1>
+<ul>
+    {% for i in tvshows %}
+    <li>
+        <h2>{{i.title}}</h2>
+        <img src="{{i.image}}" alt="" width="300" height="200">
+        <p>genre: {{i.genre}}</p>
+        <a href="/tv_shows_list/{{i.id}}">Detail</a>
+        <br>
+    </li>
+
+    {% endfor %}
+
+</ul>
+</body>
+</html>
